@@ -1,4 +1,4 @@
-package dam.a19_20.a.main;
+package dam.y19_20.a.main;
 
 import dam.t.control.Controller;
 import dam.t.view.View;
