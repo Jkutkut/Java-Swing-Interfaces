@@ -1,6 +1,7 @@
 package dam.y19_20.a.view;
 
 import dam.y19_20.a.control.Controller;
+import dam.y19_20.a.model.Videojuego;
 
 import javax.swing.*;
 
@@ -29,6 +30,11 @@ public class View extends JFrame {
     private JPanel jpAddGameControl;
     private JButton btnAddGameAdd;
     private JButton btnAddGameCancel;
+    private JPanel jpMainMenu;
+    private JPanel jpMainMenuBtns;
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
 
     public View() {
         setTitle(TITLE);
@@ -40,10 +46,16 @@ public class View extends JFrame {
     }
 
     private void initComponents() {
+        // Init add game
+        cmbPlatform.setModel(new DefaultComboBoxModel<>(Videojuego.PLATAFORMAS));
     }
 
     public void setControlador(Controller controller) {
-//        .addActionListener(controller);
+        btnAddGameAdd.addActionListener(controller);
+//        btnAddGameCancel.addActionListener(controller);
     }
 
+    public void test() {
+        jpAddGame.setVisible(false);
+    }
 }

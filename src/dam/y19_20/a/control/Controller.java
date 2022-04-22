@@ -16,7 +16,7 @@ public class Controller implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
-            
+            this.window.test();
         }
     }
 }
