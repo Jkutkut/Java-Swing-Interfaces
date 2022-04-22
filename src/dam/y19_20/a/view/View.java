@@ -32,9 +32,10 @@ public class View extends JFrame {
     private JButton btnAddGameCancel;
     private JPanel jpMainMenu;
     private JPanel jpMainMenuBtns;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
+    private JButton btnAdd;
+    private JButton btnConsultar;
+    private JButton btnExit;
+    private JLabel lblMenuTitle;
 
     public View() {
         setTitle(TITLE);
