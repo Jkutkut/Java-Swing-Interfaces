@@ -12,7 +12,7 @@ public class View extends JFrame {
     private JPanel jpForm;
     private JPanel jpTitle;
     private JLabel lblTitle;
-    private JTextField textField1;
+    private JTextField txtfTitle;
     private JPanel jpPlatform;
     private JLabel lblPlatform;
     private JComboBox cmbPlatform;
@@ -23,6 +23,12 @@ public class View extends JFrame {
     private JRadioButton rbtnPEGI12;
     private JRadioButton rbtnPEGI16;
     private JRadioButton rbtnPEGI18;
+    private JPanel jpPrestado;
+    private JLabel lblPrestado;
+    private JTextField txtfPrestado;
+    private JPanel jpAddGameControl;
+    private JButton btnAddGameAdd;
+    private JButton btnAddGameCancel;
 
     public View() {
         setTitle(TITLE);
