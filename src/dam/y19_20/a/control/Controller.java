@@ -1,6 +1,6 @@
 package dam.y19_20.a.control;
 
-import dam.t.view.View;
+import dam.y19_20.a.view.View;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

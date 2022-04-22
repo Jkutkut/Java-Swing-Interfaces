@@ -1,7 +1,7 @@
 package dam.y19_20.a.main;
 
-import dam.t.control.Controller;
-import dam.t.view.View;
+import dam.y19_20.a.control.Controller;
+import dam.y19_20.a.view.View;
 
 import java.awt.*;
 
