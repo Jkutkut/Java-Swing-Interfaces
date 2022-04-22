@@ -13,6 +13,16 @@ public class View extends JFrame {
     private JPanel jpTitle;
     private JLabel lblTitle;
     private JTextField textField1;
+    private JPanel jpPlatform;
+    private JLabel lblPlatform;
+    private JComboBox cmbPlatform;
+    private JPanel jpPEGI;
+    private JLabel lblPEGI;
+    private JRadioButton rbtnPEGI3;
+    private JRadioButton rbtnPEGI7;
+    private JRadioButton rbtnPEGI12;
+    private JRadioButton rbtnPEGI16;
+    private JRadioButton rbtnPEGI18;
 
     public View() {
         setTitle(TITLE);
