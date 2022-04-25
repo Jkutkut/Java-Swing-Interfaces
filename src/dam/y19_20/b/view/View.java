@@ -57,8 +57,27 @@ public class View extends JFrame {
     }
 
     // GETTERS
+    public JMenuItem getMenuiAdd() {
+        return menuiAdd;
+    }
+
+    public JMenuItem getMenuiConsultar() {
+        return menuiConsultar;
+    }
 
     // SETTERS
+    public void openAddMenu() {
+        jpConsultMenu.setVisible(false);
+        resetForm();
+        jpAddMenu.setVisible(true);
+    }
+
+    public void openConsultMenu() {
+        jpAddMenu.setVisible(false);
+        jpConsultMenu.setVisible(true);
+//        updateConsultTable();
+    }
+
     public void resetForm() {
         setFormError(null);
         tfFormName.setText("");
@@ -68,7 +87,7 @@ public class View extends JFrame {
     }
 
     public void setFormError(String error) {
-        if (error.isEmpty() || error == null) {
+        if (error == null || error.isEmpty()) {
             lblFormError.setText("");
         }
         else {

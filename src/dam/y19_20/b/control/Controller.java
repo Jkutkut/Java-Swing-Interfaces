@@ -18,5 +18,13 @@ public class Controller implements ActionListener {
         if (e.getSource() instanceof JButton) {
             this.window.test();
         }
+        else if (e.getSource() instanceof JMenuItem) {
+            if (e.getSource() == this.window.getMenuiAdd()) {
+                this.window.openAddMenu();
+            }
+            else if (e.getSource() == this.window.getMenuiConsultar()) {
+                this.window.openConsultMenu();
+            }
+        }
     }
 }
