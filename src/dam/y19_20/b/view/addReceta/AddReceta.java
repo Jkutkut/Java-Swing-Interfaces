@@ -1,4 +1,4 @@
-package dam.y19_20.b.view;
+package dam.y19_20.b.view.addReceta;
 
 import dam.exception.InvalidDataException;
 import dam.y19_20.b.control.Controller;
@@ -6,15 +6,14 @@ import dam.y19_20.b.model.ListaRecetas;
 import dam.y19_20.b.model.Receta;
 
 import javax.swing.*;
-import javax.swing.event.TableModelListener;
-import javax.swing.table.TableModel;
 
-public class View extends JFrame {
+public class AddReceta extends JFrame {
     private static String TITLE = "Aplicación recetas";
     private ListaRecetas listaRecetas;
 
     private JPanel jpMenu;
     private JPanel jpAddMenu;
+    private JPanel jpConsultMenu;
     private JLabel lblAddMenuTitle;
     private JPanel jpForm;
     private JPanel jpFormName;
@@ -32,12 +31,11 @@ public class View extends JFrame {
     private JLabel lblFormError;
     private JMenuItem menuiAdd;
     private JMenuItem menuiConsultar;
-    private JLabel lblFormDesc;
-    private JPanel jpConsultMenu;
     private JLabel lblConsultTitle;
     private JTable tableConsult;
+    private JLabel lblFormDesc;
 
-    public View() {
+    public AddReceta() {
         setTitle(TITLE);
         setContentPane(jpMenu);
         pack();
@@ -57,8 +55,6 @@ public class View extends JFrame {
     }
 
     public void setControlador(Controller controller) {
-        //addwindowListener(controller); // Map exit
-
         menuiAdd.addActionListener(controller);
         menuiConsultar.addActionListener(controller);
 
@@ -112,17 +108,14 @@ public class View extends JFrame {
 
     // SETTERS
     public void openAddMenu() {
-//        scroll.setViewportView(panel)
-
-
-//        jpConsultMenu.setVisible(false);
+        jpConsultMenu.setVisible(false);
         resetForm();
-//        jpAddMenu.setVisible(true);
+        jpAddMenu.setVisible(true);
     }
 
     public void openConsultMenu() {
-//        jpAddMenu.setVisible(false);
-//        jpConsultMenu.setVisible(true);
+        jpAddMenu.setVisible(false);
+        jpConsultMenu.setVisible(true);
         updateConsultTable();
     }
 
