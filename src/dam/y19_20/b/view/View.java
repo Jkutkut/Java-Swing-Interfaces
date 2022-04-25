@@ -1,6 +1,7 @@
 package dam.y19_20.b.view;
 
 import dam.y19_20.b.control.Controller;
+import dam.y19_20.b.model.Receta;
 
 import javax.swing.*;
 
@@ -33,20 +34,45 @@ public class View extends JFrame {
         setTitle(TITLE);
         setContentPane(jpMenu);
         pack();
+        setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         initComponents();
     }
 
     private void initComponents() {
+        cmbFormDificultad.setModel(new DefaultComboBoxModel<>(Receta.DIFICULTADES));
+        spFormTime.setModel(new SpinnerNumberModel(0, 0, 500, 1));
+
+        resetForm();
     }
 
     public void setControlador(Controller controller) {
-//        btnAddGameAdd.addActionListener(controller);
-//        btnAddGameCancel.addActionListener(controller);
+        menuiAdd.addActionListener(controller);
+        menuiConsultar.addActionListener(controller);
     }
 
     public void test() {
         System.out.println("Test");
+    }
+
+    // GETTERS
+
+    // SETTERS
+    public void resetForm() {
+        setFormError(null);
+        tfFormName.setText("");
+        txtaFormDesc.setText("");
+        cmbFormDificultad.setSelectedIndex(0);
+        spFormTime.setValue(0);
+    }
+
+    public void setFormError(String error) {
+        if (error.isEmpty() || error == null) {
+            lblFormError.setText("");
+        }
+        else {
+            lblFormError.setText("Error: " + error);
+        }
     }
 }
