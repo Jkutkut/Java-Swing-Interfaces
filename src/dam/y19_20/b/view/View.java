@@ -29,6 +29,7 @@ public class View extends JFrame {
     private JMenuItem menuiConsultar;
     private JLabel lblConsultTitle;
     private JTable table1;
+    private JLabel lblFormDesc;
 
     public View() {
         setTitle(TITLE);
@@ -50,10 +51,22 @@ public class View extends JFrame {
     public void setControlador(Controller controller) {
         menuiAdd.addActionListener(controller);
         menuiConsultar.addActionListener(controller);
+
+        // Menu Add
+        btnFormAdd.addActionListener(controller);
     }
 
-    public void test() {
-        System.out.println("Test");
+    public void submitForm() {
+        if (tfFormName.getText().isEmpty()) {
+            setFormError("El nombre no puede estar vacío");
+            return;
+        }
+        if (txtaFormDesc.getText().isEmpty()) {
+            setFormError("La descripción no puede estar vacía");
+            return;
+        }
+        setFormError(null);
+//        addReceta();
     }
 
     // GETTERS
@@ -63,6 +76,10 @@ public class View extends JFrame {
 
     public JMenuItem getMenuiConsultar() {
         return menuiConsultar;
+    }
+
+    public JButton getBtnFormAdd() {
+        return btnFormAdd;
     }
 
     // SETTERS
