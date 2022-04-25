@@ -7,10 +7,27 @@ import javax.swing.*;
 public class View extends JFrame {
     private static String TITLE = "";
     private JPanel jpMenu;
+    private JPanel jpAddMenu;
+    private JPanel jpConsultMenu;
+    private JLabel lblAddMenuTitle;
+    private JPanel jpForm;
+    private JPanel jpFormName;
+    private JLabel lblFormName;
+    private JTextField tfFormName;
+    private JPanel jpFormTime;
+    private JLabel lblFormTime;
+    private JSpinner spFormTime;
+    private JPanel jpFormDificultad;
+    private JLabel lblFormDificultad;
+    private JComboBox cmbFormDificultad;
+    private JPanel jpFormDesc;
+    private JTextArea txtaFormDesc;
+    private JButton btnFormAdd;
+    private JLabel lblFormError;
 
     public View() {
         setTitle(TITLE);
-//        setContentPane(jpMenu);
+        setContentPane(jpMenu);
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
