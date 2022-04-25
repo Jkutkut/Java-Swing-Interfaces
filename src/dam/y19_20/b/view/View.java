@@ -6,6 +6,8 @@ import dam.y19_20.b.model.ListaRecetas;
 import dam.y19_20.b.model.Receta;
 
 import javax.swing.*;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.TableModel;
 
 public class View extends JFrame {
     private static String TITLE = "Aplicación recetas";
@@ -32,7 +34,7 @@ public class View extends JFrame {
     private JMenuItem menuiAdd;
     private JMenuItem menuiConsultar;
     private JLabel lblConsultTitle;
-    private JTable table1;
+    private JTable tableConsult;
     private JLabel lblFormDesc;
 
     public View() {
@@ -48,7 +50,7 @@ public class View extends JFrame {
     }
 
     private void initComponents() {
-        cmbFormDificultad.setModel(new DefaultComboBoxModel<>(Receta.DIFICULTADES));
+        cmbFormDificultad.setModel(new DefaultComboBoxModel<String>(Receta.DIFICULTADES));
         spFormTime.setModel(new SpinnerNumberModel(0, 0, 500, 1));
 
         resetForm();
@@ -88,6 +90,11 @@ public class View extends JFrame {
         listaRecetas.addReceta(r);
     }
 
+    private void updateConsultTable() {
+        // Fill table with 3 rows with 3 columns with numbers
+//        tableConsult.
+    }
+
     // GETTERS
     public JMenuItem getMenuiAdd() {
         return menuiAdd;
@@ -111,7 +118,7 @@ public class View extends JFrame {
     public void openConsultMenu() {
         jpAddMenu.setVisible(false);
         jpConsultMenu.setVisible(true);
-//        updateConsultTable();
+        updateConsultTable();
     }
 
     public void resetForm() {
