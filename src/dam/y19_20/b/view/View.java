@@ -1,12 +1,16 @@
 package dam.y19_20.b.view;
 
+import dam.exception.InvalidDataException;
 import dam.y19_20.b.control.Controller;
+import dam.y19_20.b.model.ListaRecetas;
 import dam.y19_20.b.model.Receta;
 
 import javax.swing.*;
 
 public class View extends JFrame {
-    private static String TITLE = "";
+    private static String TITLE = "Aplicación recetas";
+    private ListaRecetas listaRecetas;
+
     private JPanel jpMenu;
     private JPanel jpAddMenu;
     private JPanel jpConsultMenu;
@@ -39,6 +43,8 @@ public class View extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         initComponents();
+
+        listaRecetas = new ListaRecetas();
     }
 
     private void initComponents() {
@@ -66,7 +72,20 @@ public class View extends JFrame {
             return;
         }
         setFormError(null);
-//        addReceta();
+        Receta r;
+        try {
+            r = new Receta(
+                tfFormName.getText(),
+                txtaFormDesc.getText(),
+                (int) spFormTime.getValue(),
+                cmbFormDificultad.getSelectedItem().toString()
+            );
+        }
+        catch (InvalidDataException e) {
+            setFormError(e.getMessage());
+            return;
+        }
+        listaRecetas.addReceta(r);
     }
 
     // GETTERS
