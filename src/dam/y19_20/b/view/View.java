@@ -26,6 +26,8 @@ public class View extends JFrame {
     private JLabel lblFormError;
     private JMenuItem menuiAdd;
     private JMenuItem menuiConsultar;
+    private JLabel lblConsultTitle;
+    private JTable table1;
 
     public View() {
         setTitle(TITLE);
