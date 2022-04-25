@@ -24,6 +24,8 @@ public class View extends JFrame {
     private JTextArea txtaFormDesc;
     private JButton btnFormAdd;
     private JLabel lblFormError;
+    private JMenuItem menuiAdd;
+    private JMenuItem menuiConsultar;
 
     public View() {
         setTitle(TITLE);
