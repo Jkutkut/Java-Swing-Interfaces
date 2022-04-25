@@ -6,8 +6,6 @@ import dam.y19_20.b.model.ListaRecetas;
 import dam.y19_20.b.model.Receta;
 
 import javax.swing.*;
-import javax.swing.event.TableModelListener;
-import javax.swing.table.TableModel;
 
 public class View extends JFrame {
     private static String TITLE = "Aplicación recetas";
@@ -59,8 +57,8 @@ public class View extends JFrame {
     public void setControlador(Controller controller) {
         //addwindowListener(controller); // Map exit
 
-        menuiAdd.addActionListener(controller);
-        menuiConsultar.addActionListener(controller);
+//        menuiAdd.addActionListener(controller);
+//        menuiConsultar.addActionListener(controller);
 
         // Menu Add
         btnFormAdd.addActionListener(controller);
