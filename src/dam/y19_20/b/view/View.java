@@ -12,28 +12,8 @@ public class View extends JFrame {
     private ListaRecetas listaRecetas;
 
     private JPanel jpMenu;
-    private JPanel jpAddMenu;
-    private JLabel lblAddMenuTitle;
-    private JPanel jpForm;
-    private JPanel jpFormName;
-    private JLabel lblFormName;
-    private JTextField tfFormName;
-    private JPanel jpFormTime;
-    private JLabel lblFormTime;
-    private JSpinner spFormTime;
-    private JPanel jpFormDificultad;
-    private JLabel lblFormDificultad;
-    private JComboBox cmbFormDificultad;
-    private JPanel jpFormDesc;
-    private JTextArea txtaFormDesc;
-    private JButton btnFormAdd;
-    private JLabel lblFormError;
-    private JMenuItem menuiAdd;
     private JMenuItem menuiConsultar;
-    private JLabel lblFormDesc;
-    private JPanel jpConsultMenu;
-    private JLabel lblConsultTitle;
-    private JTable tableConsult;
+    private JMenuItem menuiAdd;
 
     public View() {
         setTitle(TITLE);
@@ -48,8 +28,8 @@ public class View extends JFrame {
     }
 
     private void initComponents() {
-        cmbFormDificultad.setModel(new DefaultComboBoxModel<String>(Receta.DIFICULTADES));
-        spFormTime.setModel(new SpinnerNumberModel(0, 0, 500, 1));
+//        cmbFormDificultad.setModel(new DefaultComboBoxModel<String>(Receta.DIFICULTADES));
+//        spFormTime.setModel(new SpinnerNumberModel(0, 0, 500, 1));
 
         resetForm();
     }
@@ -61,34 +41,34 @@ public class View extends JFrame {
 //        menuiConsultar.addActionListener(controller);
 
         // Menu Add
-        btnFormAdd.addActionListener(controller);
+//        btnFormAdd.addActionListener(controller);
     }
 
-    public void submitForm() {
-        if (tfFormName.getText().isEmpty()) {
-            setFormError("El nombre no puede estar vacío");
-            return;
-        }
-        if (txtaFormDesc.getText().isEmpty()) {
-            setFormError("La descripción no puede estar vacía");
-            return;
-        }
-        setFormError(null);
-        Receta r;
-        try {
-            r = new Receta(
-                tfFormName.getText(),
-                txtaFormDesc.getText(),
-                (int) spFormTime.getValue(),
-                cmbFormDificultad.getSelectedItem().toString()
-            );
-        }
-        catch (InvalidDataException e) {
-            setFormError(e.getMessage());
-            return;
-        }
-        listaRecetas.addReceta(r);
-    }
+//    public void submitForm() {
+//        if (tfFormName.getText().isEmpty()) {
+//            setFormError("El nombre no puede estar vacío");
+//            return;
+//        }
+//        if (txtaFormDesc.getText().isEmpty()) {
+//            setFormError("La descripción no puede estar vacía");
+//            return;
+//        }
+//        setFormError(null);
+//        Receta r;
+//        try {
+//            r = new Receta(
+//                tfFormName.getText(),
+//                txtaFormDesc.getText(),
+//                (int) spFormTime.getValue(),
+//                cmbFormDificultad.getSelectedItem().toString()
+//            );
+//        }
+//        catch (InvalidDataException e) {
+//            setFormError(e.getMessage());
+//            return;
+//        }
+//        listaRecetas.addReceta(r);
+//    }
 
     private void updateConsultTable() {
         // Fill table with 3 rows with 3 columns with numbers
@@ -96,17 +76,17 @@ public class View extends JFrame {
     }
 
     // GETTERS
-    public JMenuItem getMenuiAdd() {
-        return menuiAdd;
-    }
-
-    public JMenuItem getMenuiConsultar() {
-        return menuiConsultar;
-    }
-
-    public JButton getBtnFormAdd() {
-        return btnFormAdd;
-    }
+//    public JMenuItem getMenuiAdd() {
+//        return menuiAdd;
+//    }
+//
+//    public JMenuItem getMenuiConsultar() {
+//        return menuiConsultar;
+//    }
+//
+//    public JButton getBtnFormAdd() {
+//        return btnFormAdd;
+//    }
 
     // SETTERS
     public void openAddMenu() {
@@ -125,19 +105,19 @@ public class View extends JFrame {
     }
 
     public void resetForm() {
-        setFormError(null);
-        tfFormName.setText("");
-        txtaFormDesc.setText("");
-        cmbFormDificultad.setSelectedIndex(0);
-        spFormTime.setValue(0);
+//        setFormError(null);
+//        tfFormName.setText("");
+//        txtaFormDesc.setText("");
+//        cmbFormDificultad.setSelectedIndex(0);
+//        spFormTime.setValue(0);
     }
 
     public void setFormError(String error) {
-        if (error == null || error.isEmpty()) {
-            lblFormError.setText("");
-        }
-        else {
-            lblFormError.setText("Error: " + error);
-        }
+//        if (error == null || error.isEmpty()) {
+//            lblFormError.setText("");
+//        }
+//        else {
+//            lblFormError.setText("Error: " + error);
+//        }
     }
 }

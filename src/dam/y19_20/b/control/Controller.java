@@ -15,24 +15,24 @@ public class Controller implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (false) {
-            int i = JOptionPane.showConfirmDialog(this.window, "¿Estás seguro de que quieres salir?", "Salir", JOptionPane.YES_NO_OPTION);
-            if (i == JOptionPane.YES_OPTION) {
-                System.exit(0);
-            }
-        }
-        if (e.getSource() instanceof JButton) {
-            if (e.getSource() == this.window.getBtnFormAdd()) {
-                this.window.submitForm();
-            }
-        }
-        else if (e.getSource() instanceof JMenuItem) {
-            if (e.getSource() == this.window.getMenuiAdd()) {
-                this.window.openAddMenu();
-            }
-            else if (e.getSource() == this.window.getMenuiConsultar()) {
-                this.window.openConsultMenu();
-            }
-        }
+//        if (false) {
+//            int i = JOptionPane.showConfirmDialog(this.window, "¿Estás seguro de que quieres salir?", "Salir", JOptionPane.YES_NO_OPTION);
+//            if (i == JOptionPane.YES_OPTION) {
+//                System.exit(0);
+//            }
+//        }
+//        if (e.getSource() instanceof JButton) {
+//            if (e.getSource() == this.window.getBtnFormAdd()) {
+//                this.window.submitForm();
+//            }
+//        }
+//        else if (e.getSource() instanceof JMenuItem) {
+//            if (e.getSource() == this.window.getMenuiAdd()) {
+//                this.window.openAddMenu();
+//            }
+//            else if (e.getSource() == this.window.getMenuiConsultar()) {
+//                this.window.openConsultMenu();
+//            }
+//        }
     }
 }

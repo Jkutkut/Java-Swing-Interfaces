@@ -8,7 +8,6 @@ import dam.y19_20.b.model.Receta;
 import javax.swing.*;
 
 public class AddReceta extends JFrame {
-    private static String TITLE = "Aplicación recetas";
     private ListaRecetas listaRecetas;
 
     private JPanel jpMenu;
@@ -36,7 +35,6 @@ public class AddReceta extends JFrame {
     private JLabel lblFormDesc;
 
     public AddReceta() {
-        setTitle(TITLE);
         setContentPane(jpMenu);
         pack();
         setSize(800, 600);
