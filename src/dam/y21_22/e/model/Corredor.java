@@ -24,6 +24,10 @@ public class Corredor {
         setModalidad(modalidad);
     }
 
+    public static String[] getAtributeNames() {
+        return new String[]{"Nombre", "Dorsal", "Sexo", "Edad", "Modalidad"};
+    }
+
     // GETTERS
     public String getNombre() {
         return nombre;
