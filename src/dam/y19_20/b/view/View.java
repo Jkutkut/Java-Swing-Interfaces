@@ -1,9 +1,8 @@
 package dam.y19_20.b.view;
 
-import dam.exception.InvalidDataException;
 import dam.y19_20.b.control.Controller;
 import dam.y19_20.b.model.ListaRecetas;
-import dam.y19_20.b.model.Receta;
+import dam.y19_20.b.view.addReceta.AddReceta;
 
 import javax.swing.*;
 
@@ -14,6 +13,9 @@ public class View extends JFrame {
     private JPanel jpMenu;
     private JMenuItem menuiConsultar;
     private JMenuItem menuiAdd;
+    private JScrollPane jspMenu;
+
+    private AddReceta menuAdd;
 
     public View() {
         setTitle(TITLE);
@@ -28,10 +30,7 @@ public class View extends JFrame {
     }
 
     private void initComponents() {
-//        cmbFormDificultad.setModel(new DefaultComboBoxModel<String>(Receta.DIFICULTADES));
-//        spFormTime.setModel(new SpinnerNumberModel(0, 0, 500, 1));
-
-        resetForm();
+        menuAdd = new AddReceta();
     }
 
     public void setControlador(Controller controller) {
@@ -44,64 +43,18 @@ public class View extends JFrame {
 //        btnFormAdd.addActionListener(controller);
     }
 
-//    public void submitForm() {
-//        if (tfFormName.getText().isEmpty()) {
-//            setFormError("El nombre no puede estar vacío");
-//            return;
-//        }
-//        if (txtaFormDesc.getText().isEmpty()) {
-//            setFormError("La descripción no puede estar vacía");
-//            return;
-//        }
-//        setFormError(null);
-//        Receta r;
-//        try {
-//            r = new Receta(
-//                tfFormName.getText(),
-//                txtaFormDesc.getText(),
-//                (int) spFormTime.getValue(),
-//                cmbFormDificultad.getSelectedItem().toString()
-//            );
-//        }
-//        catch (InvalidDataException e) {
-//            setFormError(e.getMessage());
-//            return;
-//        }
-//        listaRecetas.addReceta(r);
-//    }
-
     private void updateConsultTable() {
         // Fill table with 3 rows with 3 columns with numbers
 //        tableConsult.
     }
 
-    // GETTERS
-//    public JMenuItem getMenuiAdd() {
-//        return menuiAdd;
-//    }
-//
-//    public JMenuItem getMenuiConsultar() {
-//        return menuiConsultar;
-//    }
-//
-//    public JButton getBtnFormAdd() {
-//        return btnFormAdd;
-//    }
-
     // SETTERS
     public void openAddMenu() {
-//        scroll.setViewportView(panel)
-
-
-//        jpConsultMenu.setVisible(false);
-        resetForm();
-//        jpAddMenu.setVisible(true);
+        jspMenu.setViewportView(menuAdd.getJpMenu());
+        menuAdd.resetForm();
     }
 
     public void openConsultMenu() {
-//        jpAddMenu.setVisible(false);
-//        jpConsultMenu.setVisible(true);
-        updateConsultTable();
     }
 
     public void resetForm() {
