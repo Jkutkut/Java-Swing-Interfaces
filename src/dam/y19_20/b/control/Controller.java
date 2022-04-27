@@ -31,13 +31,15 @@ public class Controller implements ActionListener {
             if (e.getSource() == this.addMenu.getBtnFormAdd()) {
                 this.addMenu.submitForm();
             }
+            else if (e.getSource() == this.seeMenu.getBtnUpdate()) {
+                this.seeMenu.updateTable();
+            }
         }
         else if (e.getSource() instanceof JMenuItem) {
             if (e.getSource() == this.window.getMenuiAdd()) {
                 this.window.loadMenu(this.addMenu.getMenu());
             }
             else if (e.getSource() == this.window.getMenuiConsultar()) {
-                this.seeMenu.updateTable();
                 this.window.loadMenu(this.seeMenu.getMenu());
             }
         }

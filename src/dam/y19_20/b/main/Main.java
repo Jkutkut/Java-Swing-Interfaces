@@ -22,7 +22,7 @@ public class Main {
                 Controller controlador = new Controller(ventana, addMenu, seeMenu);
                 ventana.setControlador(controlador);
                 addMenu.setControlador(controlador);
-//                seeMenu.setControlador(controlador);
+                seeMenu.setControlador(controlador);
                 ventana.setVisible(true);
             }
         });
