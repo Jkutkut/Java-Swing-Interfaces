@@ -38,7 +38,6 @@ public class AddReceta extends JFrame {
         setContentPane(jpMenu);
         pack();
         setSize(800, 600);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         initComponents();
 
