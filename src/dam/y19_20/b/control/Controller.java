@@ -27,12 +27,12 @@ public class Controller implements ActionListener {
 //                System.exit(0);
 //            }
 //        }
-//        if (e.getSource() instanceof JButton) {
-//            if (e.getSource() == this.window.getAddMenu().getBtnFormAdd()) {
-//                this.window.getAddMenu().submitForm();
-//            }
-//        }
-        if (e.getSource() instanceof JMenuItem) {
+        if (e.getSource() instanceof JButton) {
+            if (e.getSource() == this.addMenu.getBtnFormAdd()) {
+                this.addMenu.submitForm();
+            }
+        }
+        else if (e.getSource() instanceof JMenuItem) {
             if (e.getSource() == this.window.getMenuiAdd()) {
                 this.window.loadMenu(this.addMenu.getMenu());
             }
