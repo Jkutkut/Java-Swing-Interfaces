@@ -30,22 +30,18 @@ public class View extends JFrame {
     }
 
     private void initComponents() {
-        menuAdd = new AddReceta();
+        menuAdd = new AddReceta(this.listaRecetas);
     }
 
     public void setControlador(Controller controller) {
-        //addwindowListener(controller); // Map exit
+//        addwindowListener(controller); // Map exit
 
-//        menuiAdd.addActionListener(controller);
-//        menuiConsultar.addActionListener(controller);
+        menuiAdd.addActionListener(controller);
+        menuiConsultar.addActionListener(controller);
 
-        // Menu Add
-//        btnFormAdd.addActionListener(controller);
-    }
+        menuAdd.setControlador(controller);
 
-    private void updateConsultTable() {
-        // Fill table with 3 rows with 3 columns with numbers
-//        tableConsult.
+        openAddMenu(); // TODO
     }
 
     // SETTERS
@@ -57,20 +53,17 @@ public class View extends JFrame {
     public void openConsultMenu() {
     }
 
-    public void resetForm() {
-//        setFormError(null);
-//        tfFormName.setText("");
-//        txtaFormDesc.setText("");
-//        cmbFormDificultad.setSelectedIndex(0);
-//        spFormTime.setValue(0);
+    // GETTERS
+
+    public JMenuItem getMenuiAdd() {
+        return menuiAdd;
     }
 
-    public void setFormError(String error) {
-//        if (error == null || error.isEmpty()) {
-//            lblFormError.setText("");
-//        }
-//        else {
-//            lblFormError.setText("Error: " + error);
-//        }
+    public JMenuItem getMenuiConsultar() {
+        return menuiConsultar;
+    }
+
+    public AddReceta getAddMenu() {
+        return menuAdd;
     }
 }

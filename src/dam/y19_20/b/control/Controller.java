@@ -21,18 +21,18 @@ public class Controller implements ActionListener {
 //                System.exit(0);
 //            }
 //        }
-//        if (e.getSource() instanceof JButton) {
-//            if (e.getSource() == this.window.getBtnFormAdd()) {
-//                this.window.submitForm();
-//            }
-//        }
-//        else if (e.getSource() instanceof JMenuItem) {
-//            if (e.getSource() == this.window.getMenuiAdd()) {
-//                this.window.openAddMenu();
-//            }
-//            else if (e.getSource() == this.window.getMenuiConsultar()) {
-//                this.window.openConsultMenu();
-//            }
-//        }
+        if (e.getSource() instanceof JButton) {
+            if (e.getSource() == this.window.getAddMenu().getBtnFormAdd()) {
+                this.window.getAddMenu().submitForm();
+            }
+        }
+        if (e.getSource() instanceof JMenuItem) {
+            if (e.getSource() == this.window.getMenuiAdd()) {
+                this.window.openAddMenu();
+            }
+            else if (e.getSource() == this.window.getMenuiConsultar()) {
+                this.window.openConsultMenu();
+            }
+        }
     }
 }

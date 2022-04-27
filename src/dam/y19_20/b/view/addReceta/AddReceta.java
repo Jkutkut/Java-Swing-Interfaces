@@ -34,7 +34,7 @@ public class AddReceta extends JFrame {
     private JTable tableConsult;
     private JLabel lblFormDesc;
 
-    public AddReceta() {
+    public AddReceta(ListaRecetas listaRecetas) {
         setContentPane(jpMenu);
         pack();
         setSize(800, 600);
@@ -42,7 +42,7 @@ public class AddReceta extends JFrame {
         setLocationRelativeTo(null);
         initComponents();
 
-        listaRecetas = new ListaRecetas();
+        this.listaRecetas = listaRecetas;
     }
 
     private void initComponents() {
@@ -53,10 +53,6 @@ public class AddReceta extends JFrame {
     }
 
     public void setControlador(Controller controller) {
-        menuiAdd.addActionListener(controller);
-        menuiConsultar.addActionListener(controller);
-
-        // Menu Add
         btnFormAdd.addActionListener(controller);
     }
 
@@ -84,11 +80,7 @@ public class AddReceta extends JFrame {
             return;
         }
         listaRecetas.addReceta(r);
-    }
-
-    private void updateConsultTable() {
-        // Fill table with 3 rows with 3 columns with numbers
-//        tableConsult.
+        resetForm();
     }
 
     // GETTERS
@@ -96,31 +88,11 @@ public class AddReceta extends JFrame {
         return jpMenu;
     }
 
-    public JMenuItem getMenuiAdd() {
-        return menuiAdd;
-    }
-
-    public JMenuItem getMenuiConsultar() {
-        return menuiConsultar;
-    }
-
     public JButton getBtnFormAdd() {
         return btnFormAdd;
     }
 
     // SETTERS
-    public void openAddMenu() {
-        jpConsultMenu.setVisible(false);
-        resetForm();
-        jpAddMenu.setVisible(true);
-    }
-
-    public void openConsultMenu() {
-        jpAddMenu.setVisible(false);
-        jpConsultMenu.setVisible(true);
-        updateConsultTable();
-    }
-
     public void resetForm() {
         setFormError(null);
         tfFormName.setText("");
