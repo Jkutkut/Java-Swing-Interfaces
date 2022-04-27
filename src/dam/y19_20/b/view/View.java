@@ -15,9 +15,7 @@ public class View extends JFrame {
     private JMenuItem menuiAdd;
     private JScrollPane jspMenu;
 
-    private AddReceta menuAdd;
-
-    public View() {
+    public View(ListaRecetas listaRecetas) {
         setTitle(TITLE);
         setContentPane(jpMenu);
         pack();
@@ -26,11 +24,10 @@ public class View extends JFrame {
         setLocationRelativeTo(null);
         initComponents();
 
-        listaRecetas = new ListaRecetas();
+        this.listaRecetas = listaRecetas;
     }
 
     private void initComponents() {
-        menuAdd = new AddReceta(this.listaRecetas);
     }
 
     public void setControlador(Controller controller) {
@@ -38,32 +35,19 @@ public class View extends JFrame {
 
         menuiAdd.addActionListener(controller);
         menuiConsultar.addActionListener(controller);
-
-        menuAdd.setControlador(controller);
-
-        openAddMenu(); // TODO
     }
 
     // SETTERS
-    public void openAddMenu() {
-        jspMenu.setViewportView(menuAdd.getJpMenu());
-        menuAdd.resetForm();
-    }
-
-    public void openConsultMenu() {
+    public void loadMenu(JPanel jpMenu) {
+        jspMenu.setViewportView(jpMenu);
     }
 
     // GETTERS
-
     public JMenuItem getMenuiAdd() {
         return menuiAdd;
     }
 
     public JMenuItem getMenuiConsultar() {
         return menuiConsultar;
-    }
-
-    public AddReceta getAddMenu() {
-        return menuAdd;
     }
 }

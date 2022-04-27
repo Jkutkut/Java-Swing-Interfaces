@@ -83,7 +83,7 @@ public class AddReceta extends JFrame {
     }
 
     // GETTERS
-    public JPanel getJpMenu() {
+    public JPanel getMenu() {
         return jpMenu;
     }
 
