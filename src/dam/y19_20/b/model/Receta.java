@@ -18,6 +18,10 @@ public class Receta {
         this.setDificultad(dificultad);
     }
 
+    public static String[] getAtributeNames() {
+        return new String[]{"Nombre", "Descripción", "Tiempo", "Dificultad"};
+    }
+
     // GETTERS
     public String getNombre() {
         return nombre;

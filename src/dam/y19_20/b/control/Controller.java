@@ -37,6 +37,7 @@ public class Controller implements ActionListener {
                 this.window.loadMenu(this.addMenu.getMenu());
             }
             else if (e.getSource() == this.window.getMenuiConsultar()) {
+                this.seeMenu.updateTable();
                 this.window.loadMenu(this.seeMenu.getMenu());
             }
         }

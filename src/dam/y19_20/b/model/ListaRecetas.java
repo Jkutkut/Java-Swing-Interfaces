@@ -13,4 +13,11 @@ public class ListaRecetas {
         recetas.add(r);
     }
 
+    public ArrayList<Receta> getRecetas() {
+        return recetas;
+    }
+
+    public String[] getAtributeNames() {
+        return Receta.getAtributeNames();
+    }
 }
