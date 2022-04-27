@@ -33,6 +33,22 @@ public class Corredor {
         return nombre;
     }
 
+    public String getDorsal() {
+        return dorsal;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getModalidad() {
+        return modalidad;
+    }
+
     private boolean esSexoValido(String sexo) {
         if (sexo == null || sexo.isEmpty())
             return false;
