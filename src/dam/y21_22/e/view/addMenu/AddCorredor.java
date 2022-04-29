@@ -60,12 +60,20 @@ public class AddCorredor extends JFrame {
             setFormError("El nombre no puede estar vacío");
             return;
         }
+        int dorsal;
+        try {
+            dorsal = Integer.parseInt(txtfFormDorsal.getText());
+        }
+        catch (NumberFormatException e) {
+            setFormError("El dorsal debe ser un número");
+            return;
+        }
         setFormError(null);
         Corredor r;
         try {
             r = new Corredor(
                 tfFormName.getText(),
-                txtfFormDorsal.getText(),
+                dorsal,
                 cmbFormSexo.getSelectedItem().toString(),
                 (int) spFormEdad.getValue(),
                 cmbFormModalidad.getSelectedItem().toString()
