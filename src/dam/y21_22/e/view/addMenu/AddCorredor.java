@@ -18,14 +18,6 @@ public class AddCorredor extends JFrame {
     private JPanel jpFormName;
     private JLabel lblFormName;
     private JTextField tfFormName;
-    private JPanel jpFormTime;
-    private JLabel lblFormTime;
-    private JSpinner spFormTime;
-    private JPanel jpFormDificultad;
-    private JLabel lblFormDificultad;
-    private JComboBox cmbFormDificultad;
-    private JPanel jpFormDesc;
-    private JTextArea txtaFormDesc;
     private JButton btnFormAdd;
     private JLabel lblFormError;
     private JPanel jpFormEdad;
@@ -37,11 +29,9 @@ public class AddCorredor extends JFrame {
     private JComboBox cmbFormModalidad;
     private JLabel lblFormEdad;
     private JSpinner spFormEdad;
-    private JMenuItem menuiAdd;
-    private JMenuItem menuiConsultar;
-    private JLabel lblConsultTitle;
-    private JTable tableConsult;
-    private JLabel lblFormDesc;
+    private JPanel jpFormDorsal;
+    private JLabel lblFormDorsal;
+    private JTextField txtfFormDorsal;
 
     public AddCorredor(ListaCorredores listaRecetas) {
         setContentPane(jpMenu);
@@ -55,6 +45,7 @@ public class AddCorredor extends JFrame {
 
     private void initComponents() {
         cmbFormSexo.setModel(new DefaultComboBoxModel<String>(Corredor.SEXOS));
+        cmbFormModalidad.setModel(new DefaultComboBoxModel<String>(Corredor.MODALIDADES));
         spFormEdad.setModel(new SpinnerNumberModel(Corredor.MIN_EDAD, Corredor.MIN_EDAD, Corredor.MAX_EDAD, 1));
 
         resetForm();
@@ -65,28 +56,22 @@ public class AddCorredor extends JFrame {
     }
 
     public void submitForm() {
-//        if (tfFormName.getText().isEmpty()) {
-//            setFormError("El nombre no puede estar vacío");
-//            return;
-//        }
-//        if (txtaFormDesc.getText().isEmpty()) {
-//            setFormError("La descripción no puede estar vacía");
-//            return;
-//        }
-//        setFormError(null);
-//        Corredor r;
-//        try {
+        if (tfFormName.getText().isEmpty()) {
+            setFormError("El nombre no puede estar vacío");
+            return;
+        }
+        setFormError(null);
+        Corredor r;
+        try {
 //            r = new Corredor(
 //                tfFormName.getText(),
-//                txtaFormDesc.getText(),
-//                (int) spFormTime.getValue(),
-//                cmbFormDificultad.getSelectedItem().toString()
+//
 //            );
-//        }
-//        catch (InvalidDataException e) {
-//            setFormError(e.getMessage());
-//            return;
-//        }
+        }
+        catch (InvalidDataException e) {
+            setFormError(e.getMessage());
+            return;
+        }
 //        listaRecetas.addReceta(r);
 //        resetForm();
     }
@@ -102,11 +87,11 @@ public class AddCorredor extends JFrame {
 
     // SETTERS
     public void resetForm() {
-//        setFormError(null);
-//        tfFormName.setText("");
-//        txtaFormDesc.setText("");
-//        cmbFormDificultad.setSelectedIndex(0);
-//        spFormTime.setValue(0);
+        lblFormError.setText("");
+        tfFormName.setText("");
+        spFormEdad.setValue(Corredor.MIN_EDAD);
+        cmbFormSexo.setSelectedIndex(0);
+        cmbFormModalidad.setSelectedIndex(0);
     }
 
     public void setFormError(String error) {
