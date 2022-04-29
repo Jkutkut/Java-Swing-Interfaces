@@ -8,7 +8,7 @@ import dam.y21_22.e.model.Corredor;
 import javax.swing.*;
 
 public class AddCorredor extends JFrame {
-    private ListaCorredores listaRecetas;
+    private ListaCorredores listaCorredores;
 
     private JPanel jpMenu;
     private JPanel jpAddMenu;
@@ -33,14 +33,14 @@ public class AddCorredor extends JFrame {
     private JLabel lblFormDorsal;
     private JTextField txtfFormDorsal;
 
-    public AddCorredor(ListaCorredores listaRecetas) {
+    public AddCorredor(ListaCorredores listaCorredores) {
         setContentPane(jpMenu);
         pack();
         setSize(800, 600);
         setLocationRelativeTo(null);
         initComponents();
 
-        this.listaRecetas = listaRecetas;
+        this.listaCorredores = listaCorredores;
     }
 
     private void initComponents() {
@@ -63,17 +63,20 @@ public class AddCorredor extends JFrame {
         setFormError(null);
         Corredor r;
         try {
-//            r = new Corredor(
-//                tfFormName.getText(),
-//
-//            );
+            r = new Corredor(
+                tfFormName.getText(),
+                txtfFormDorsal.getText(),
+                cmbFormSexo.getSelectedItem().toString(),
+                (int) spFormEdad.getValue(),
+                cmbFormModalidad.getSelectedItem().toString()
+            );
         }
         catch (InvalidDataException e) {
             setFormError(e.getMessage());
             return;
         }
-//        listaRecetas.addReceta(r);
-//        resetForm();
+        listaCorredores.addCorredor(r);
+        resetForm();
     }
 
     // GETTERS
