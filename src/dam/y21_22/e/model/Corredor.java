@@ -11,12 +11,12 @@ public class Corredor {
     public static final String[] MODALIDADES = {"10000", "Medio maratón", "Maratón"};
 
     private String nombre;
-    private String dorsal;
+    private int dorsal;
     private String sexo;
     private int edad;
     private String modalidad;
 
-    public Corredor(String nombre, String dorsal, String sexo, int edad, String modalidad) {
+    public Corredor(String nombre, int dorsal, String sexo, int edad, String modalidad) {
         setNombre(nombre);
         setDorsal(dorsal);
         setSexo(sexo);
@@ -33,7 +33,7 @@ public class Corredor {
         return nombre;
     }
 
-    public String getDorsal() {
+    public int getDorsal() {
         return dorsal;
     }
 
@@ -74,11 +74,9 @@ public class Corredor {
         this.nombre = nombre;
     }
 
-    public void setDorsal(String dorsal) {
-        if (dorsal == null || dorsal.isEmpty())
-            throw new InvalidDataException("Dorsal no puede estar vacío");
-        if (dorsal.length() != MAX_DORSAL_LEN)
-            throw new InvalidDataException("Dorsal no puede tener más de " + MAX_DORSAL_LEN + " caracteres");
+    public void setDorsal(int dorsal) {
+        if (dorsal < 0 || dorsal > Math.pow(10, MAX_DORSAL_LEN))
+            throw new InvalidDataException("Dorsal no puede ser negativo ni tener más de %d dígitos", MAX_DORSAL_LEN);
         this.dorsal = dorsal;
     }
 
