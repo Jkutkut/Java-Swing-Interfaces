@@ -7,7 +7,7 @@ public class Corredor {
     public static final int MAX_DORSAL_LEN = 5;
     public static final int MAX_EDAD = 150;
     public static final int MIN_EDAD = 5;
-    public static final String[] SEXOS = {"Hombre", "Mujer", "Otro"};
+    public static final String[] SEXOS = {"Hombre", "Mujer"};
     public static final String[] MODALIDADES = {"10000", "Medio maratón", "Maratón"};
 
     private String nombre;

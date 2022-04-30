@@ -14,6 +14,10 @@ public class SeeCorredor extends JFrame {
     private JLabel lblTitle;
     private JTable table;
     private JButton btnUpdate;
+    private JPanel jpFilter;
+    private JRadioButton rbtnSexMale;
+    private JRadioButton rbtnSexFemale;
+    private JRadioButton rbtnSexAll;
 
     public SeeCorredor(ListaCorredores listaCorredores) {
         setSize(800, 600);
