@@ -86,4 +86,12 @@
       </grid>
     </children>
   </grid>
+  <buttonGroups>
+    <group name="tableFilter">
+      <member id="8d16f"/>
+      <member id="8d16f"/>
+      <member id="27c00"/>
+      <member id="1a5c3"/>
+    </group>
+  </buttonGroups>
 </form>
