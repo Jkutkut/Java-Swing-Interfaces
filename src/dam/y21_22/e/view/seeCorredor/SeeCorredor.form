@@ -87,7 +87,7 @@
     </children>
   </grid>
   <buttonGroups>
-    <group name="tableFilter">
+    <group name="tableFilter" bound="true">
       <member id="8d16f"/>
       <member id="8d16f"/>
       <member id="27c00"/>

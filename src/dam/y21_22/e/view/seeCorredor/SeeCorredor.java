@@ -18,6 +18,7 @@ public class SeeCorredor extends JFrame {
     private JRadioButton rbtnSexMale;
     private JRadioButton rbtnSexFemale;
     private JRadioButton rbtnSexAll;
+    private ButtonGroup tableFilter;
 
     public SeeCorredor(ListaCorredores listaCorredores) {
         setSize(800, 600);
@@ -58,9 +59,18 @@ public class SeeCorredor extends JFrame {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.getDataVector().clear();
 
-        Object rowData[];
+        boolean[] wantedSex = {true, true};
+        if (rbtnSexMale.isSelected())
+            wantedSex[1] = false;
+        else if (rbtnSexFemale.isSelected())
+            wantedSex[0] = false;
 
+        Object rowData[];
+        int sex;
         for (Corredor c : listaCorredores.getCorredores()) {
+            sex = (c.getSexo().equals("Hombre")) ? 0 : 1;
+            if (!wantedSex[sex])
+                continue;
             rowData = new Object[listaCorredores.getAtributeNames().length];
             rowData[0] = c.getNombre();
             rowData[1] = c.getDorsal();
